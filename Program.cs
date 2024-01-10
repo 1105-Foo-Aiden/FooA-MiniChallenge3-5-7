@@ -1,4 +1,7 @@
+using FooA_MiniChallenge3_5_7.Services.MadLib;
 using FooA_MiniChallenge3_5_7.Services.OddEven;
+using FooA_MiniChallenge3_5_7.Services.ReverseNum;
+using FooA_MiniChallenge3_5_7.Services.ReverseWord;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -9,6 +12,9 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddScoped<IOddEven, OddEven>();
+builder.Services.AddScoped<IMadLib, MadLib>();
+builder.Services.AddScoped<IReverseNum, ReverseNum>();
+builder.Services.AddScoped<IReverseWord, ReverseWord>();
 
 var app = builder.Build();
 
